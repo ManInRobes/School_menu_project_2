@@ -24,50 +24,56 @@ def menu(input_value = 0 , input_list = [], selection = 0):
     }}
     if selection == 0:
         print(list(Menu.keys()))
-        selection = (input("Input a menu selection: ")).lower()
+        selection = (input("Input a menu category: ")).lower()
     if selection == 'appetizer' or 'main' or 'dessert':
         print(f"So from the {selection} menu pick what you would like")
         selection = f'{selection}_menu_dic'
+        print(Menu[selection])
         for key, value in Menu[selection].items():
-            print(key, value)
-
-            # If input matches key than confirm,
-            # add insert to list logic
-            # add value of the key selected to a list
-            # if key is selected append key to output_list and add value of key to value_add
-            # else try it again
-            #
-            # -output_price = output_price
-            # -output_list = output_list
-            # if user wants to add more things to the list then run the function with the input of the list then bill
-            # -return output_bill, output_list
+            loop_state = True
+            while loop_state == True:
+                user_input=input(f'Would you like {key}? is costs {value}$ \n \
+                [Y] yes or [N] no')
+                if user_input == 'Y':
+                    print(f"You've selected {key}! ")
+                    menu_item = key
+                    item_amount = int(input(f'How many of {key} would you like'))
+                    total_item = item_amount * value
+                    print(f"You've entered you want {item_amount} of {menu_item}")
+                    output_list.append(menu_item)
+                    output_bill.append(item_amount)
+                    loop_state = False
+                if user_input  == 'N':
+                    print("Moving on to the next item")
+                    loop_state = False
     else:
         print(f'The selection {selection} doesnt exist yet')
         output_bill, output_list = menu(output_list, output_bill)
         return output_bill, output_list
+    return output_bill, output_list
 
-printed = menu()
-print(printed)
+#  the amount of tax,
+def tax_select(selection = 0):
+    state_tax = 0.10
+    if selection == 0:
+        print(f'This states tax is {state_tax} ')
+        return state_tax
+    if selection != 0:
+        tax = selection
+        if len(tax) <= len(00.00):
+            return tax
+        if len(tax) <= len(00.0):
+            tax = tax / 10
+        if len(tax) <= len(00):
+            tax = tax / 100
+            return
+        if len(tax) <= len(0):
+            tax = tax / 1000
+        else:
+            print(f"you input {selection} this is invalid \n \
+                keep this input to either a format of a number of X, XX, XX.X, or XX.XX")
+            user_in = int(input())
+        output = (tax_select(user_in))
+        return output
 
-
-# #  the amount of tax,
-# def tax_select(selection = 0):
-#     state_tax = 0.10
-#     if selection == 0:
-#         print(f'This states tax is {state_tax} ')
-#         return state_tax
-#     if selection != 0:
-#         tax = selection
-#         if len(tax) <= len(00.00):
-#             return tax
-#         if len(tax) <= len(00):
-#             tax = tax / 100
-#             return
-#         else:
-#             print(f"you input {selection} this is invalid \n \
-#                 keep this input to either a format of a number of XX or XX.XX")
-#             user_in = int(input())
-#         output = (tax_select(user_in))
-#         return output
-
-# #  and the menu dictionary
+#  and the menu dictionary

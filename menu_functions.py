@@ -6,10 +6,6 @@ def items_grouping():
     menu_bill, menu_list = mi.menu
     tax = mi.tax()
     return menu_bill, menu_list, tax
-# Prompts the user to select an item,
-
-# Returns the item name and price,
-
 # The second function
 def tip_choice():
 # Displays the tip options and prompts the user to input a tip
