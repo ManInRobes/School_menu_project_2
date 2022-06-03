@@ -1,4 +1,3 @@
-from operator import truediv
 import menu_functions as mf
 import menu_items as mi
 
