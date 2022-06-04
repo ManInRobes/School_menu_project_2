@@ -9,7 +9,7 @@ def menu(input_value = [] , input_list = [], selection = 0):
         print("you currently have nothing in your 'cart' ")
     if input_list != []:
         print(f"you currently have the following items: {input_list} in your 'cart' "  )
-        print(f"Also your current bill is {sum(input_value)}")
+        print(f"Also your current bill is {sum(input_value)}$")
     # menu_categories = ['Appetizer menu', 'Main menu', 'Dessert menu']
     Menu = { 
         "app_menu_dic": {
@@ -56,6 +56,7 @@ def menu(input_value = [] , input_list = [], selection = 0):
             output_bill, output_list = menu(output_bill, output_list)
             return output_bill, output_list
         return output_bill, output_list
+
 
 #  the amount of tax,
 def tax_select(selection = 0):

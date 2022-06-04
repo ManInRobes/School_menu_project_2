@@ -1,6 +1,7 @@
 import menu_items as mi
 # menu_functions: Holds two functions,
 
+
 # One function; displays the items in a grouping,
 def items_grouping(menu_bill = [], menu_list = []):
     menus = menu_list
@@ -17,6 +18,8 @@ def items_grouping(menu_bill = [], menu_list = []):
             print(f"your input, {user_input} wasn't a valid input try again")
     tax = mi.tax_select()
     return bills, menus, tax
+
+
 # The second function
 def tip_choice():
 # Displays the tip options and prompts the user to input a tip
