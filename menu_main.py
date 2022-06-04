@@ -18,9 +18,18 @@ while true_state == True:
         tip = mf.tip_choice()
         output = bill_calc(menu_bill, tax, tip)
         print(f"you ordered {menu_list} ")
-        print(f"The total of your bill is {menu_bill}$, a tax of {tax} with a tip of {tip}$ your total comes out to {output}$")
+        print(f"The total of your bill before tax and tip is {sum(menu_bill)}$, tax of {tax} with a tip of {tip}$ and a total that comes out to {output}$")
+        user_input = input("would you like to simulate another menu selection? \n \
+            [Y] or [N]: ").lower()
+        if user_input == "y":
+            menu_bill = []
+            menu_list = []
+        if user_input == "n":
+            usage_state == 1
+            break
     if usage_state == 1:
         true_state = False
+        break
     # If you don't want to quit the menu
 
 # The main body of the code
