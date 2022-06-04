@@ -24,6 +24,8 @@ while true_state == True:
         if user_input == "y":
             menu_bill = []
             menu_list = []
+            tax = 0
+            tip = 0
         if user_input == "n":
             usage_state == 1
             break

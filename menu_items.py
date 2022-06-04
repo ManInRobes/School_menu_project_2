@@ -58,31 +58,20 @@ def menu(input_value = [] , input_list = [], selection = 0):
         return output_bill, output_list
 
 
-#  the amount of tax,
+#  the amount of tax, This is my least favorite part of my code but the only way I could think of doing it at the time
 def tax_select(selection = 0):
-    state_tax = 0.10
     if selection == 0:
-        state_tax = 0.10
-        print(f'This states tax is {state_tax} ')
-        user_input = float(input("Input [0] if you just want to use the defualt state tax 0, \n \
-            or you can input a custom value: "))
-        return state_tax
+        selection = float(input("you can input a custom value one number (ie. 1 is 1%, 10 is 10%, and 100 is 100%): "))
     if selection != 0:
         tax = selection
-        if len(tax) <= len(00.00):
-            return tax
-        if len(tax) <= len(00.0):
-            tax = tax / 10
-        if len(tax) <= len(00):
-            tax = tax / 100
-            return
-        if len(tax) <= len(0):
-            tax = tax / 1000
-        else:
-            print(f"you input {selection} this is invalid \n \
-                keep this input to either a format of a number of X, XX, XX.X, or XX.XX")
-            user_in = int(input())
-        output = (tax_select(user_in))
-        return output
+        return tax
+
+    else:
+        print(f"you input {selection} this is invalid \n \
+            keep this input to either a format of a number of X, XX, XX.X, or XX.XX")
+        user_in = tax_select()
+        return user_in
+    output = (tax_select(user_in))
+    return output
 
 #  and the menu dictionary
